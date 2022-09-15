@@ -29,4 +29,9 @@ const authSignUpSchema = joi.object({
     ),
 });
 
-export { authSignUpSchema };
+const authLoginSchema = joi.object({
+  email: joi.string().email().required(),
+  password: joi.string().required(),
+});
+
+export { authSignUpSchema, authLoginSchema };
