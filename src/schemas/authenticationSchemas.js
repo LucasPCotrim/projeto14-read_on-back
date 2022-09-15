@@ -12,7 +12,7 @@ const authSignUpSchema = joi.object({
         .string()
         .valid(
           'Fantasia',
-          'Ficcção Cinetífica',
+          'Ficcção Científica',
           'Ação e Aventura',
           'Romance',
           'Suspense',
