@@ -1,7 +1,5 @@
 import db from '../database/mongodb.js';
 
-let db = await conection();
-
 async function checkToken(req, res, next) {
     const authorization = req.headers.authorization;
     const token = authorization?.replace('Bearer ', '');
