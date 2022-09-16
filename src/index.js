@@ -2,6 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import authenticationRoutes from './routes/authenticationRoutes.js';
+import productsRoutes from './routes/productsRouters.js';
+import closeSessions from './intervals.js/closeSissions.js';
+const MIN = 60 * 1000;
+const HOUR = MIN * 60;
 
 dotenv.config();
 
@@ -10,6 +14,11 @@ app.use(cors());
 app.use(express.json());
 
 app.use(authenticationRoutes);
+app.use(productsRoutes);
+
+setInterval(() => {
+  closeSessions(HOUR);
+  }, MIN);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

@@ -62,7 +62,7 @@ export async function userLogin(req, res) {
     // Insert session into Database
     await db.collection('sessions').deleteMany({ userId: existingUser._id });
     const token = uuid();
-    await db.collection('sessions').insertOne({ token, userId: existingUser._id });
+    await db.collection('sessions').insertOne({ token, userId: existingUser._id, timeLogin: Date.now(), });
     return res.status(200).send({
       message: 'Successful login',
       token,

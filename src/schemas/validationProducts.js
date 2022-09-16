@@ -1,11 +1,15 @@
 import joi from 'joi';
 
-const authSignUpSchema = joi.object({
-  name: joi.string().required(),
-  email: joi.string().email().required(),
-  password: joi.string().required(),
-  passwordConfirm: joi.any().valid(joi.ref('password')).required(),
-  favGenres: joi
+const productSchema = joi.object({
+  title: joi.string().required(),
+  subTitle: joi.string().required(),
+  description: joi.string().email().required(),
+  img: joi.string().required(),
+  autor: joi.string().required(),
+  price: joi.number().required(),
+  amount: joi.number().required(),
+  rank: joi.number().required(),
+  geners: joi
     .array()
     .items(
       joi
@@ -26,12 +30,7 @@ const authSignUpSchema = joi.object({
           'Gastronomia',
           'HQs'
         )
-    ),
+    ).required(),
 });
 
-const authLoginSchema = joi.object({
-  email: joi.string().email().required(),
-  password: joi.string().required(),
-});
-
-export { authSignUpSchema, authLoginSchema };
+export default productSchema;
