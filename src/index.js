@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import authenticationRoutes from './routes/authenticationRoutes.js';
-import productsRoutes from './routes/productsRouters.js';
+import productsRoutes from './routes/productsRoutes.js';
 import closeSessions from './intervals.js/closeSissions.js';
 import cartRoutes from './routes/CartRoutes.js';
 import checkoutRoutes from './routes/checkoutRoutes.js';
@@ -23,8 +23,7 @@ app.use(checkoutRoutes);
 
 setInterval(() => {
   closeSessions(HOUR);
-  }, MIN);
-
+}, MIN);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

@@ -1,11 +1,10 @@
 import db from '../database/mongodb.js';
 
-export async function authorizeUserMiddleware(req, res, next) {
-
+export default async function authorizeUserMiddleware(req, res, next) {
   // Obtain user authentication token
   const { authorization } = req.headers;
   const token = authorization?.replace('Bearer ', '');
-  
+
   // Verify if user authentication token was sent
   if (!token) {
     return res.status(401).send({ message: 'Error: Invalid authentication token!' });
