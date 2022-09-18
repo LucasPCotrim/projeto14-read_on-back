@@ -21,7 +21,7 @@ const checkoutSchema = joi.object({
   addressInfo: joi.object({
     address: joi.string().required(),
     number: joi.number().required(),
-    complement: joi.string().required(),
+    complement: joi.string(),
     district: joi.string().required(),
     state: joi.string().required(),
     city: joi.string().required(),
