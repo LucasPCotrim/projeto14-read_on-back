@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import authenticationRoutes from './routes/authenticationRoutes.js';
 import productsRoutes from './routes/productsRoutes.js';
 import closeSessions from './intervals.js/closeSissions.js';
-import cartRoutes from './routes/CartRoutes.js';
+import cartRoutes from './routes/cartRoutes.js';
 import checkoutRoutes from './routes/checkoutRoutes.js';
 
 const MIN = 60 * 1000;
