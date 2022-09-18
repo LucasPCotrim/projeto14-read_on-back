@@ -1,3 +1,5 @@
+import joi from 'joi';
+
 const checkoutSchema = joi.object({
   name: joi.string().required(),
   email: joi.string().email().required(),
@@ -11,7 +13,7 @@ const checkoutSchema = joi.object({
         description: joi.string().required(),
         img: joi.string().required(),
         author: joi.string().required(),
-        amount: joi.number().required(),
+        price: joi.number().required(),
         amount: joi.number().required(),
       })
     )

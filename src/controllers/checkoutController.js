@@ -1,8 +1,11 @@
 import db from '../database/mongodb.js';
 import dayjs from 'dayjs';
-import checkoutSchema from '../schemas/checkoutSchemas.js';
+import { checkoutSchema } from '../schemas/checkoutSchemas.js';
 
 export async function registerSale(req, res) {
+  console.log('------------------');
+  console.log('registerSale');
+
   // Obtain user
   const { user } = res.locals;
 
@@ -18,6 +21,8 @@ export async function registerSale(req, res) {
     addressInfo,
   });
   if (validError) {
+    console.log('validError');
+    console.log(validError);
     return res.status(422).send({ message: String(validError) });
   }
 
@@ -29,7 +34,7 @@ export async function registerSale(req, res) {
       cpf,
       products,
       addressInfo,
-      date: dayjs().format('DD/MM'),
+      datetime: dayjs().format('DD/MM/YYYY - HH:mm:ss'),
       userId: user._id,
     });
     res.status(200).send({ message: 'Sale successful!' });
