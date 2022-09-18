@@ -1,5 +1,4 @@
-import db from '../database/mongodb.js';
-import cartSchema from '../schemas/validationCart.js';
+import cartSchema from '../schemas/validationCartSchemas.js';
 
 async function validationCart(req, res, next) {
     const user = res.locals.user;
