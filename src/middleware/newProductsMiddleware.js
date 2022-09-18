@@ -11,8 +11,8 @@ async function validationProducts(req, res, next) {
         return res.sendStatus(401);
     }
 
-    const producs = await db.collection('products').findOne({ title });
-    if (producs) {
+    const products = await db.collection('products').findOne({ title });
+    if (products) {
         return res.status(409).send('Item já cadastrado!');
     }
 
