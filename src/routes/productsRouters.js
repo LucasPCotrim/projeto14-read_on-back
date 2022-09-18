@@ -1,11 +1,11 @@
 import { Router } from 'express';
 import getProducts from '../controllers/getProductsController.js';
-import setProducts from '../controllers/setProductsController.js';
-import validationProducts from '../middleware/newProductsMiddleware.js';
+import setProducts from '../controllers/updateProductController.js';
+import validationProducts from '../middleware/updateProductsMiddleware.js';
 
 const router = Router();
 
 router.get('/products', getProducts);
-router.post('/products', validationProducts, setProducts);
+router.put('/products', validationProducts, setProducts);
 
 export default router;

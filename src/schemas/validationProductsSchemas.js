@@ -1,6 +1,15 @@
 import joi from 'joi';
 
 const productSchema = joi.object({
+  productId: joi.string().required(),
+  amount: joi.number().required(),
+  rank: joi.number().required(),
+});
+
+export default productSchema;
+/* import joi from 'joi';
+
+const productSchema = joi.object({
   title: joi.string().required(),
   subTitle: joi.string().required(),
   description: joi.string().email().required(),
@@ -33,4 +42,4 @@ const productSchema = joi.object({
     ).required(),
 });
 
-export default productSchema;
+export default productSchema; */
