@@ -8,12 +8,7 @@ const checkoutSchema = joi.object({
     .array()
     .items(
       joi.object({
-        title: joi.string().required(),
-        subtitle: joi.string(),
-        description: joi.string().required(),
-        img: joi.string().required(),
-        author: joi.string().required(),
-        price: joi.number().required(),
+        productId: joi.string().required(),
         amount: joi.number().required(),
       })
     )
